@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Places
+{% endblock %}
+
+{% block section %}
+  
+<div class="container">
+  <h2 id="text-center">Enter Location: </h2>
+  <form id="location-form">
+    <input type="text" id="location-input" class="form-control form-control-lg">
+    <br>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+  </form>
+</div>
+<div class="container-event">
+  <div class="row">
+    <div class="col-xs-6">
+      <div id='events-panel' class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Events</h3>
+        </div>
+        <div class="panel-body">
+
+          <div id="events" class="list-group">
+            <a href="#" class="list-group-item">
+              <h4 id='heading_1' class="list-group-item-heading"></h4>
+              <p id='text_1' class="list-group-item-text"></p>
+              <p id='venue_1' class="venue"></p>
+              <button id="save1">Save.</button>
+            </a>
+
+            <a href="#" class="list-group-item">
+              <h4 id='heading_2' class="list-group-item-heading"></h4>
+              <p id='text_2' class="list-group-item-text"></p>
+              <p id='venue_2' class="venue"></p>
+              <button id="save2">Save.</button>
+            </a>
+
+            <a href="#" class="list-group-item">
+              <h4 id='heading_3' class="list-group-item-heading"></h4>
+              <p id='text_3' class="list-group-item-text"></p>
+              <p id='venue_3' class="venue"></p>
+              <button id="save3">Save.</button>
+            </a>
+
+            <a href="#" class="list-group-item">
+              <h4 id='heading_4' class="list-group-item-heading"></h4>
+              <p id='text_4' class="list-group-item-text"></p>
+              <p id='venue_4' class="venue"></p>
+              <button id="save4">Save.</button>
+            </a>
+
+          </div>
+
+        </div>
+        <div class="panel-footer">
+          <nav>
+            <ul class="pager">
+              <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a></li>
+              <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div>
+        <p id='result'></p>
+      </div>
+
+      <div id='attraction-panel' class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Attraction</h3>
+        </div>
+        <div id="attraction" class="panel-body">
+          <h4 class="list-group-item-heading">Attraction title</h4>
+          <img class="col-xs-12" src="">
+          <p id="classification"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var tm_api_key= '{{ tm_key }}'
+  var google_api_key= '{{ google_key }}' 
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='events.js') }}"> 
+</script>
+<script src="{{ url_for('static', filename='events.js') }}"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+  integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+{% endblock %}

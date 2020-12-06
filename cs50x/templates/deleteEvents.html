@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Delete Events
+{% endblock %}
+
+{% block section %}
+    <table class="table table-striped" style="width:100%">
+      <caption id="tableTitle"><h2>DELETES EVENTS</h2></caption>
+      <tr>
+        <th><h3>Event Name</h3></th>
+        <th><h3>Location</h3></th>
+        <th><h3>Date</h3></th>
+      </tr>
+    
+    {% for myEvents in myEvent %}
+      
+      <tr>
+        <td>{{ myEvents.event }}</td>
+        <td>{{ myEvents.location }}</td>
+        <td>{{ myEvents.date }}</td>
+        <td>
+            <a href="/myEvents/restore/{{myEvents.event_id}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Restore?')">Restore</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+    <a href="/deleteEvents/deleteTable" class="btn btn-danger btn-xs" style="float: right; margin-right: 5%;">Enty The Table</a><br>
+
+    <a href="/myEvents" class="btn btn-primary btn-xs" style="float: right; margin-right: 5%; margin-top: 10px;">My Events</a>
+{% endblock %}

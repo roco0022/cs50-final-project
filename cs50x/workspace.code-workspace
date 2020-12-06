@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "vsc",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"python.pythonPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+	}
+}

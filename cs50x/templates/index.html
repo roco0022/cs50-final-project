@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block section %}
+<section id="showcase">
+    <div class="container">
+        <h1>Are you new in town? </h1>
+        <p>So lets find some events and places near you.</p>
+    </div>
+</section>
+<section id="wether">   
+    <div class="container_wether">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <div class="notification"> </div>
+        <div class="weather-container">
+            <div class="weather-icon">
+                <img src="{{ url_for('static', filename='icons/unknown.png') }}"/>
+            </div>
+            <div class="temperature-value">
+                <p>- °<span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p> - </p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='wether.js') }}"></script>
+    <script type="text/javascript">
+        var wether_api_key = '{{ wether_key }}'
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='wether.js') }}">
+    </script>
+
+</section>
+<section>
+    {% if not myEvent %}
+        <style>
+            #indexTable { visibility: hidden; }
+        </style>
+        <div>
+            <h2 style="text-align: center;">You Don't Have Any Up-coming Events!</h2>
+        </div>
+    {%endif%}
+    <table id="indexTable" class="table table-striped" style="width:60%">
+        <caption id="tableTitle"><h2>Here Are Your Next Events!</h2></caption>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+        </tr>
+      
+      {% for myEvents in myEvent %}
+        
+        <tr>
+          <td>{{ myEvents.event }}</td>
+          <td>{{ myEvents.date }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+</section>
+
+{% endblock %}

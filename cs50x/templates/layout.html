@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+        
+        <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+        <link href="{{ url_for('static', filename='font/Rimouski.css') }}" rel="stylesheet"/>
+        
+        <!-- Latest compiled and minified CSS <link rel="stylesheet" href="cs50x/static/font/Rimouski.css"/> -->
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&libraries=places&v=3.exp"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <!-- http://stewartjpark.com/Flask-JSGlue/ -->
+        {{ JSGlue.include() }}
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+        
+        
+        <!-- http://1000hz.github.io/bootstrap-validator/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+        <title>NewInTown: {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar">
+                    <div class="container-fluid">
+                        <div id="logo">
+                            <h1><span class="highlight">New</span>InTown</h1>
+                        </div>
+                            {% if session.user_id %}
+                                <ul class="nav navbar-nav">
+                                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                                    <li><a href="{{ url_for('places') }}">Places/News</a></li>
+                                    <li><a href="{{ url_for('events') }}">Events</a></li>
+                                    <li><a href="{{ url_for('myEvents') }}">My Events</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="{{ url_for('changePassword') }}">Change-Password</a></li>
+                                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                                </ul>
+                            {% else %}
+                                <ul class="nav navbar-nav">
+                                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                                    <li><a href="{{ url_for('places') }}">Places/News</a></li>
+                                    <li><a href="{{ url_for('events') }}">Events</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                    <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                </ul>
+                            {% endif %}
+
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        {% if get_flashed_messages() %}
+        <header>
+            <div class="alert alert-info" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+        </header>
+        {% endif %}
+        
+        <section>
+            {% block section %}{% endblock %}
+        </section>
+
+
+    </body>
+    <footer class="site-footer">
+        <p>New In Town, Copyright &copy; 2020</p>
+    </footer>
+
+</html>

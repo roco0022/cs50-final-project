@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Places
+{% endblock %}
+
+{% block section %}
+
+        <div class="container-fluid">
+            <div id="map-canvas"></div>
+
+            <!-- http://getbootstrap.com/css/#forms -->
+            <form id="form">
+                <div class="form-group">
+                    <label class="sr-only" for="q">City, State, Postal Code</label>
+                    <input class="form-control" id="q" placeholder="City, State, Postal Code" type="text"/>
+                </div>
+            </form>
+        </div>
+        
+        
+{% endblock %}

@@ -1,0 +1,312 @@
+body {
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Global */
+
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header **/
+header {
+  background: #35424a;
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #e8491d 3px solid;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  float: right;
+}
+
+header #logo {
+  float: left;
+  margin-right: 15px;
+  font-family: Bernard MT Condensed;
+}
+
+header #logo h1 {
+  margin: 0;
+}
+
+header .highlight {
+  color: #e8491d;
+  font-weight: bold;
+}
+
+.nav {
+  margin-top: -2px;
+}
+
+
+section #login {
+  margin: auto;
+  padding-top: 50px;
+
+}
+
+section #showcase {
+  min-height: 400px;
+  background-image: url("/static/img/city.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center -650px;
+  text-align: center;
+  color: #35424a;
+}
+
+section #showcase h1 {
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+section #register {
+  margin: auto;
+  padding-top: 50px;
+
+}
+
+section #apology {
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+
+}
+
+#map-canvas {
+  
+  min-height: 800px;
+  width: 100%;
+  float: right;
+  /* height of these elements */
+  height: 100%;
+
+  /* no margin around these elements */
+  margin: 0;
+
+  /* disable scrollbars */
+  overflow: hidden;
+
+  /* no padding within these elements */
+  padding: 0;
+}
+
+
+#form {
+  /* position form "absolutely" where we want it */
+  position: absolute;
+
+  /* distance from top edge of viewport */
+  margin-top: 28px;
+
+  /* form's width */
+  width: 100%;
+}
+
+#form .form-group {
+  /* block-level flex container */
+  display: flex;
+
+  /* center container's content */
+  justify-content: center;
+}
+
+#q {
+  /* override typeahead.js's transparent background */
+  background-color: #ffffff !important;
+
+  /* text box's width */
+  width: 300px;
+}
+
+/* stylize info window */
+#info {
+  /* no margin around this element */
+  margin: 0;
+
+  /* allow scrollbars as needed */
+  overflow: auto;
+}
+
+#info ul {
+  margin-bottom: 0;
+}
+
+/* stylize typeahead.js a la http://twitter.github.io/typeahead.js/css/examples.css */
+.tt-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 1px;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 300px;
+}
+
+.tt-suggestion.tt-cursor {
+  background-color: #0097cf;
+  color: #fff;
+  cursor: pointer;
+}
+
+.tt-suggestion {
+  margin: 0;
+  padding: 6px 12px;
+}
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding-top: 10px;
+  background-color: #35424a;
+  text-align: center;
+  color: #ffffff;
+  border-top: #e8491d 3px solid;
+}
+
+#attraction-panel {
+  display: none;
+}
+
+.container-event {
+  padding-top: 80px;
+  margin-left: 20%;
+}
+/*/////////////////////////////////////////////////////*/
+*{
+    font-family: "Rimouski";
+}
+
+.container_wether{
+    width: 300px;    
+    background-color: #FFF;
+    
+    display: block;
+    margin: 0 auto;
+    
+    border-radius: 10px;
+    padding-bottom : 50px;
+}
+
+.app-title{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.app-title p{
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: #293251;
+}
+
+.notification{
+    background-color: #f8d7da;
+    display: none;
+}
+
+.notification p{
+    color: #721c24;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.weather-container{
+    width: 300px;
+    height: 260px;
+    background-color: #F4F9FF;
+}
+
+.weather-icon{
+    width: 300px;
+    height: 128px;
+}
+
+.weather-icon img{
+    display: block;
+    margin: 0 auto;
+}
+
+.temperature-value{
+    width: 300px;
+    height:60px;
+}
+
+.temperature-value p{
+    padding: 0;
+    margin: 0;
+    color: #293251;
+    font-size: 4em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.temperature-value p:hover{
+    
+}
+
+.temperature-value span{
+    color: #293251;
+    font-size: 0.5em;
+}
+
+.temperature-description{
+    
+}
+
+.temperature-description p{
+    padding: 8px;
+    margin: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.location{
+    
+}
+
+.location p{
+    margin: 0;
+    padding: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+section #wether{
+  float: left;
+}
+
+#indexTable{
+  float: left;
+}
+
+#tableTitle{
+  text-align: center;
+  color: #293251;
+}
